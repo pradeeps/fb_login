@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def userparams 
-    params.require(:user).permit(:provider, :uid, :name, :oauthtoken, :oauthexpiresat) 
+    params.require(:user).permit(:provider, :uid, :name, :oauthtoken, :oauthexpiresat, :email) 
   end
 
 end
