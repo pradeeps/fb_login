@@ -2,8 +2,6 @@
 
 class User < ActiveRecord::Base
 
-attr_accessor :remember_token, :activation_token, :reset_token, :uid, :email, :provider, :name, :oauth_token, :oauth_expires_at
-
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
