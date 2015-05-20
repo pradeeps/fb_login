@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env["omniauth.auth"])
     
     render :text => user.inspect
-    #session[:user_id] = user.id
-    #redirect_to root_url
+    session[:user_id] = user.id
+    redirect_to root_url
   end
 
   def destroy
